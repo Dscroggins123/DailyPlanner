@@ -75,7 +75,7 @@ textarea{
 }
 .inputfield {
   height:auto;
-  
+  background: transparent;
   border: none;
   width: 100%;
   

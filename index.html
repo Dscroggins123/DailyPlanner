@@ -157,11 +157,13 @@
         var input = $("input").val();
         localStorage.setItem('input', JSON.stringify(input))
         var activities = JSON.parse(localStorage.getItem('input'));
+        })
+        var currentTime = new Date().getHours();
         
-        
-      })
-      
-
+          if ((parseInt($(".col-md-8").data("time"))) < currentTime) {
+            
+          }
+        console.log(parseInt($(".col-md-8").data("time")))
 
     </script>
   
