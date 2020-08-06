@@ -143,6 +143,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
     <script>
+      var currentTime = new Date().getHours();
+        console.log(currentTime)
+        if (($(".col-md-8").data("time")) > currentTime) ; {
+          $(".col-md-8").addClass("future")
+        
+        }
+        if (($(".col-md-8").data("time")) < currentTime) ; {
+          $(".col-md-8").addClass("past")
+        }
+        if (($(".col-md-8").data("time")) == currentTime) ; {
+          $(".col-md-8").addClass("present")
+        }
+      
+      
+      
+      
       var button = $("<button>")
         var buttonImage = $("<img>");
       buttonImage.attr("src", "https://images.assetsdelivery.com/compings_v2/vectorv/vectorv1906/vectorv190623035.jpg");
@@ -158,12 +174,8 @@
         localStorage.setItem('input', JSON.stringify(input))
         var activities = JSON.parse(localStorage.getItem('input'));
         })
-        var currentTime = new Date().getHours();
         
-          if ((parseInt($(".col-md-8").data("time"))) < currentTime) {
-            
-          }
-        console.log(parseInt($(".col-md-8").data("time")))
+        
 
     </script>
   
