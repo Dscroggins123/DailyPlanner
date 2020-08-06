@@ -36,6 +36,7 @@ textarea{
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;;
+  margin-bottom:10px;
 }
 
 .hour {
@@ -73,8 +74,8 @@ textarea{
   transition: all .3s ease-in-out;
 }
 .inputfield {
+  height:auto;
   
-  flex: 1;
   border: none;
   width: 100%;
   
