@@ -145,16 +145,9 @@
     <script>
       var currentTime = new Date().getHours();
         console.log(currentTime)
-        if (($(".col-md-8").data("time")) > currentTime) ; {
-          $(".col-md-8").addClass("future")
+
         
-        }
-        if (($(".col-md-8").data("time")) < currentTime) ; {
-          $(".col-md-8").addClass("past")
-        }
-        if (($(".col-md-8").data("time")) == currentTime) ; {
-          $(".col-md-8").addClass("present")
-        }
+        
       
       
       
@@ -170,12 +163,37 @@
       $("#currentDay").append(moment().format('MMMM Do YYYY '))
       var activites = []
       $("button").on("click" ,function(event){
-        var input = $("input").val();
-        localStorage.setItem('input', JSON.stringify(input))
-        var activities = JSON.parse(localStorage.getItem('input'));
+        var input = $(this).parent().siblings(".description").children().val();
+        var time = $(this).parent().siblings(".description").data("time")
+        console.log(input);
+        localStorage.setItem(time, JSON.stringify(input))
+        
+
+        });
+      
+        $(".description").each(function(index) {
+          console.log("this is the index" + index)
+          console.log($(this).data("time"))
+          if ($(this).data("time") > currentTime) {
+          $(this).addClass("future")
+        
+        }
+        if ($(this).data("time") < currentTime)  {
+          $(this).addClass("past")
+        }
+        if ($(this).data("time") == currentTime)  {
+          $(this).addClass("present")
+        }
+
         })
         
-        
+        function appendStuffFromLocalStorage() {
+          $(".inputfield").each(function(i) {
+            $(this).val(JSON.parse(localStorage.getItem(i + 9)))
+          })
+        }
+
+        appendStuffFromLocalStorage()
 
     </script>
   
